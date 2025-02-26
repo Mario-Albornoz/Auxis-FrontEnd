@@ -12,7 +12,7 @@ const Navbar = (props: Props) => {
     console.log("Palette Grey 300:", palette.grey[300]);
 
   return( <FlexBetween mb="0.25rem" 
-    p="0.5rem 2rem"
+    p="1rem 2rem"
     sx={{
       backgroundColor: palette.background.default,
       color: palette.grey[300]}}>
