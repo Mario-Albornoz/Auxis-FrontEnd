@@ -11,20 +11,31 @@ const Navbar = (props: Props) => {
     const [selected, setSelected] = useState("Dashboard");
     console.log("Palette Grey 300:", palette.grey[300]);
 
-  return( <FlexBetween mb="0.25rem" p="0.5rem 0rem" color={palette.grey[300]}>
+  return( <FlexBetween mb="0.25rem" 
+    p="0.5rem 2rem"
+    sx={{
+      backgroundColor: palette.background.default,
+      color: palette.grey[300]}}>
+        
     {/* Left Side*/}
     <FlexBetween gap="0.75rem">
-        <BrokenImageIcon sx={{ fontSize: "28px"}}/>
-        <Typography variant='h4' fontSize="16px">
+        <Link
+          to="/"
+          onClick={() => setSelected("/")}
+          style={{ textDecoration: "none", display: "flex", alignItems: "center" }}
+        >
+          <BrokenImageIcon sx={{ fontSize: "28px", color: palette.primary[100] }} />
+          <Typography variant="h4" fontSize="16px" sx={{ color: palette.primary[100], ml: "0.5rem" }}>
             Auxis
-        </Typography>
-    </FlexBetween>
+          </Typography>
+        </Link>
+      </FlexBetween>
 
      {/* Right Side*/}
      <FlexBetween gap="2rem">
         <Box sx={{"&:hover": { color: palette.primary[100]}}} >
             <Link
-            to="/"
+            to="/dashboard"
             onClick={() => setSelected('Dashboard')}
             style={{
                 color: selected === "Dashboard" ? "inherit" : palette.grey[700],
