@@ -20,28 +20,26 @@ const Row3 = () => {
   const { data: transactionData } = useGetTransactionsQuery();
 
   const pieChartData = useMemo(() => {
-    if (kpiData) {
-      const totalExpenses = kpiData[0].totalExpenses;
-      return Object.entries(kpiData[0].ExpensesByCategory).map(
-        ([key, value]) => {
-          return [
-            {
-              name: key,
-              value: value,
-            },
-            {
-              name: `${key} of Total`,
-              value: totalExpenses - value,
-            },
-          ];
-        }
-      );
+    if (!kpiData || !kpiData[0]?.ExpensesByCategory) {
+      return []; // Return an empty array if data isn't available
     }
+  
+    const totalExpenses = kpiData[0].totalExpenses;
+    return Object.entries(kpiData[0].ExpensesByCategory).map(([key, value]) => [
+      {
+        name: key,
+        value: value,
+      },
+      {
+        name: `${key} of Total`,
+        value: totalExpenses - value,
+      },
+    ]);
   }, [kpiData]);
 
   const productColumns = [
     {
-      field: "_id",
+      field: "id",
       headerName: "id",
       flex: 1,
     },
@@ -61,7 +59,7 @@ const Row3 = () => {
 
   const transactionColumns = [
     {
-      field: "_id",
+      field: "id",
       headerName: "id",
       flex: 1,
     },
@@ -76,13 +74,15 @@ const Row3 = () => {
       flex: 0.35,
       renderCell: (params: GridCellParams) => `$${params.value}`,
     },
-    {
-      field: "productIds",
-      headerName: "Count",
-      flex: 0.1,
-      renderCell: (params: GridCellParams) =>
-        (params.value as Array<string>).length,
-    },
+    // {
+    //   field: "productIds",
+    //   headerName: "Count",
+    //   flex: 0.1,
+    //   renderCell: (params: GridCellParams) => {
+    //     const value = params.value as Array<string> | null;
+    //     return value ? value.length : 0; // Return 0 if value is null/undefined
+    //   },
+    // },
   ];
 
   return (

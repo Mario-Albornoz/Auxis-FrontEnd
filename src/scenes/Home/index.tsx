@@ -19,7 +19,7 @@ const Home = () => {
             }}
         >
             <Typography variant="h1" fontWeight="bold" color="white" gutterBottom >
-            Welcome to Financial Analyst
+            Welcome to Financial Analyst!!
             </Typography>
             <Typography  variant= "h2" color="white">
             Helping medium-sized businesses transform electronic billing data into actionable insights.
