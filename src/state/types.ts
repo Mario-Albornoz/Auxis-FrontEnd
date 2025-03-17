@@ -5,7 +5,7 @@ export interface GetKpisResponse {
     totalProfit: number;
     totalRevenue: number;
     totalExpenses: number;
-    expensesByCategory: ExpensesByCategory;
+    ExpensesByCategory: ExpensesByCategory;
     monthlyData: Array<Month>;
     dailyData: Array<Day>;
     createdAt: string;
