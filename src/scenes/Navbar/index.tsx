@@ -4,9 +4,8 @@ import { Box, Typography, useTheme  } from '@mui/material';
 import FlexBetween from '../../components/FlexBetween';
 import BrokenImageIcon from '@mui/icons-material/BrokenImage';
 
-type Props = {}
 
-const Navbar = (props: Props) => {
+const Navbar = () => {
     const {palette}= useTheme();
     const [selected, setSelected] = useState("Dashboard");
     console.log("Palette Grey 300:", palette.grey[300]);
@@ -24,8 +23,8 @@ const Navbar = (props: Props) => {
           onClick={() => setSelected("/")}
           style={{ textDecoration: "none", display: "flex", alignItems: "center" }}
         >
-          <BrokenImageIcon sx={{ fontSize: "28px", color: palette.primary[100] }} />
-          <Typography variant="h4" fontSize="16px" sx={{ color: palette.primary[100], ml: "0.5rem" }}>
+          <BrokenImageIcon sx={{ fontSize: "28px", color: palette.primary[600] }} />
+          <Typography variant="h4" fontSize="16px" sx={{ color: palette.primary[600], ml: "0.5rem" }}>
             Auxis
           </Typography>
         </Link>

@@ -51,7 +51,6 @@ const Row2 = () => {
 
   return (
     <>
-    <DashboardBox gridArea="d">
           <DashboardBox gridArea="d">
           <BoxHeader
             title="Operational vs Non-Operational Expenses"
@@ -66,46 +65,18 @@ const Row2 = () => {
                   bottom: 55,
                 }}
               >
-                            <defs>
-                    <linearGradient id="colorRevenue" x1="0" y1="0" x2="0" y2="1">
-                      <stop
-                        offset="5%"
-                        stopColor={palette.primary[300]}
-                        stopOpacity={0.5}
-                      />
-                      <stop
-                        offset="95%"
-                        stopColor={palette.primary[300]}
-                        stopOpacity={0}
-                      />
-                    </linearGradient>
-                    <linearGradient id="colorExpenses" x1="0" y1="0" x2="0" y2="1">
-                      <stop
-                        offset="5%"
-                        stopColor={palette.primary[300]}
-                        stopOpacity={0.5}
-                      />
-                      <stop
-                        offset="95%"
-                        stopColor={palette.primary[300]}
-                        stopOpacity={0}
-                      />
-                    </linearGradient>
-                  </defs>
-      
+
                   <CartesianGrid vertical={false} stroke={palette.grey[800]} />
           <XAxis dataKey="name" tickLine={false} style={{ fontSize: "10px" }} />
-          <YAxis yAxisId="left" orientation="left" tickLine={false} axisLine={false} />
-          <YAxis yAxisId="right" orientation="right" tickLine={false} axisLine={false} />
+          <YAxis yAxisId="left" orientation="left" tickLine={false} axisLine={false} style={{ fontSize: "10px" }}/>
+          <YAxis yAxisId="right" orientation="right" tickLine={false} axisLine={false} style={{ fontSize: "10px" }}/>
       
           <Tooltip />
       
-          <Line yAxisId="left" type="monotone" dataKey="Non-Operational Expenses" stroke={palette.secondary.main} />
-          <Line yAxisId="right" type="monotone" dataKey="Operational Expenses" dot={true} stroke={palette.primary.main} />
-          <Line yAxisId="left" type="monotone" dataKey="expenses" dot={true} stroke={palette.primary.main} />
+          <Line yAxisId="left" type="monotone" dataKey="Non-Operational Expenses" stroke={palette.tertiary[500]} />
+          <Line yAxisId="right" type="monotone" dataKey="Operational Expenses" stroke={palette.primary.main} />
         </LineChart>
             </ResponsiveContainer>
-          </DashboardBox>
     </DashboardBox>
     <DashboardBox gridArea="e">
       <BoxHeader title="Campaigns and Targets" sideText='+4%'/>
