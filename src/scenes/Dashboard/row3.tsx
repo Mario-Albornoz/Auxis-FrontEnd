@@ -20,12 +20,12 @@ const Row3 = () => {
   const { data: transactionData } = useGetTransactionsQuery();
 
   const pieChartData = useMemo(() => {
-    if (!kpiData || !kpiData[0]?.ExpensesByCategory) {
+    if (!kpiData || !kpiData[0]?.expensesByCategory) {
       return []; // Return an empty array if data isn't available
     }
   
     const totalExpenses = kpiData[0].totalExpenses;
-    return Object.entries(kpiData[0].ExpensesByCategory).map(([key, value]) => [
+    return Object.entries(kpiData[0].expensesByCategory).map(([key, value]) => [
       {
         name: key,
         value: value,
