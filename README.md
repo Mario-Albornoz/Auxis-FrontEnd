@@ -1,50 +1,14 @@
-# React + TypeScript + Vite
+## Auxis Financial Analyst 
+Our project Auxis is a digital financial analyst for small to medium businesses that documents and processes financial data without the need of hiring a financial analyst.
+It includes a dashboard that processes the data using charts and tables. It also includes a predictions page that shows the actual revenue and predictions for the next year's revenue. 
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+## Why Auxis
+The purpose of Auxis is to provide small and medium-sized businesses with a digital financial analyst app that makes data documentation and forecasting easy to manage and understand without the need for hiring a dedicated analyst by offering real time insights, interactive data visualization, and financial predictions.
 
-Currently, two official plugins are available:
+## Stack
+For the stack, frontend consists of Vite for the starter application, Redux Toolkit for state management, Material UI for component library and to make sure that it works on desktops, tablets and mobile devices. Recharts for data visualization. For the backend Node Js for easy and quick API request handling, Java as the backend framework, and MongoDB for the cloud database.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## To Deploy
+Before deploying the app make sure you have installed Node.js and npm.
+To deploy the app simply copy the repository and run it
 
-## Expanding the ESLint configuration
-
-If you are developing a production application, we recommend updating the configuration to enable type aware lint rules:
-
-- Configure the top-level `parserOptions` property like this:
-
-```js
-export default tseslint.config({
-  languageOptions: {
-    // other options...
-    parserOptions: {
-      project: ['./tsconfig.node.json', './tsconfig.app.json'],
-      tsconfigRootDir: import.meta.dirname,
-    },
-  },
-})
-```
-
-- Replace `tseslint.configs.recommended` to `tseslint.configs.recommendedTypeChecked` or `tseslint.configs.strictTypeChecked`
-- Optionally add `...tseslint.configs.stylisticTypeChecked`
-- Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and update the config:
-
-```js
-// eslint.config.js
-import react from 'eslint-plugin-react'
-
-export default tseslint.config({
-  // Set the react version
-  settings: { react: { version: '18.3' } },
-  plugins: {
-    // Add the react plugin
-    react,
-  },
-  rules: {
-    // other rules...
-    // Enable its recommended rules
-    ...react.configs.recommended.rules,
-    ...react.configs['jsx-runtime'].rules,
-  },
-})
-```
