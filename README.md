@@ -10,5 +10,5 @@ For the stack, frontend consists of Vite for the starter application, Redux Tool
 
 ## To Deploy
 Before deploying the app make sure you have installed Node.js and npm.
-To deploy the app simply copy the repository and run it
+To deploy the app simply copy the repository and run it.
 
